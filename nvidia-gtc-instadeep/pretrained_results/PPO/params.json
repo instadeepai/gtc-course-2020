@@ -1,0 +1,94 @@
+{
+  "env": "train_env",
+  "env_config": {
+    "frozen": false,
+    "height": 8,
+    "number_of_agents": 5,
+    "obs_config": {
+      "max_depth": 2
+    },
+    "rail_config": {
+      "min_dist": 8,
+      "nr_extra": 0,
+      "nr_start_goal": 12,
+      "seed": 10
+    },
+    "rail_generator": "complex_rail_generator",
+    "remove_agents_at_target": true,
+    "schedule_config": {},
+    "schedule_generator": "complex_schedule_generator",
+    "wait_for_all_done": false,
+    "width": 8
+  },
+  "horizon": 60,
+  "log_level": "DEBUG",
+  "lr": 0.0001,
+  "model": {
+    "custom_model": "dense_model",
+    "custom_options": {
+      "actor": {
+        "activation_fn": "relu",
+        "hidden_layers": [
+          10
+        ]
+      },
+      "critic": {
+        "activation_fn": "relu",
+        "hidden_layers": [
+          10
+        ]
+      },
+      "embedding": {
+        "activation_fn": "relu",
+        "hidden_layers": [
+          10,
+          10
+        ]
+      },
+      "observation_radius": 0,
+      "tree_depth": 2
+    },
+    "custom_preprocessor": "tree_obs_preprocessor"
+  },
+  "multiagent": {
+    "policies": {
+      "policy_0": [
+        null,
+        "Box(231,)",
+        "Discrete(5)",
+        {}
+      ],
+      "policy_1": [
+        null,
+        "Box(231,)",
+        "Discrete(5)",
+        {}
+      ],
+      "policy_2": [
+        null,
+        "Box(231,)",
+        "Discrete(5)",
+        {}
+      ],
+      "policy_3": [
+        null,
+        "Box(231,)",
+        "Discrete(5)",
+        {}
+      ],
+      "policy_4": [
+        null,
+        "Box(231,)",
+        "Discrete(5)",
+        {}
+      ]
+    },
+    "policy_mapping_fn": "<function main.<locals>.<lambda> at 0x7ff35b895400>"
+  },
+  "num_cpus_for_driver": 1,
+  "num_cpus_per_worker": 1,
+  "num_gpus": 8,
+  "num_sgd_iter": 15,
+  "num_workers": 8,
+  "vf_loss_coeff": 1e-06
+}
